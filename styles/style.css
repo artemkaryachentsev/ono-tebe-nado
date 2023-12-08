@@ -171,6 +171,7 @@ address a {
     position: relative;
     z-index: 1;  
 }
+
 .bet-button {
     color: #FFF;
     text-align: center;
@@ -254,7 +255,7 @@ address a {
     z-index: -2;
 }
 
-.lots__look-more-link{
+.lots__look-more-link {
     text-decoration: none;
     border-bottom: 1px solid #000;
     padding-bottom: 2px;
@@ -311,7 +312,6 @@ address a {
     width: 240px;
     border: 2px solid transparent;
     border-radius: 50%;
-    justify-content: center;
     align-self: center;   
 }
 
