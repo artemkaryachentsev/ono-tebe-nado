@@ -1,9 +1,4 @@
-body {
-    font-family: Raleway, sans-serif;
-    background-color: #fff;
-}
-
-h1 {
+.cover_title {
     color: #FFF;
     text-align: center;
     font-family: Raleway;
@@ -16,14 +11,19 @@ h1 {
 }
 
 .header {
-    width: 1340px;
-    height: 109px;
-    margin: 92px 49px auto 51px;
+    max-width: 1340px;
+    width: 100%;
+    /*height: 109px;*/
+    /*margin: 92px 49px auto 51px;*/
+    padding-top: 92px;
+    padding-left: 51px;
+    padding-right: 49px;
     flex-shrink: 0;
     display: grid;
     grid-auto-flow: column;
+    align-items: center;
+    /*не очень понял комментарий что 1fr min-content 1fr будет более гибким, наоборот средний блок скукожился и вообще не очень было понятно, как двигать логотип, на марджины и падинги он не реагировал.  */
     grid-template-columns: 1fr 1fr 1fr;
-
     /* первый вариант с флексом, но при нем криво вставал логотип
     display: flex;
     flex-flow: row nowrap;
@@ -44,8 +44,8 @@ h1 {
     display: flex;
     flex-direction: row;
     gap: 32px;
-    margin-top: 43px;
-    margin-bottom: 45px;
+    padding-top: 43px;
+    padding-bottom: 45px;
     list-style: circle;
     padding-left: 0%;
 }
@@ -64,17 +64,24 @@ h1 {
     text-decoration: none;
 }
 
+.header__logo {
+    justify-self: center;
+}
+
 .header__logo_image {
-    display: block;
-    margin: auto auto 4px auto;
+    /*padding: auto 2px;*/
+    padding-left: 7px;
+    padding-right: 7px;
     width: 148px;
-    height: 105px;
+    /*t: 105px;*/
     flex-shrink: 0;
 }
 
-header address {
-    width: 240px;
-    height: 24px;
+.address {
+    padding-top: 7px;
+    max-width: 240px;
+    width: 100%;
+    /*height: 24px;*/
     flex-shrink: 0;
     color: #000;
     font-family: Raleway;
@@ -89,10 +96,7 @@ address a {
     text-decoration: none;
     border-bottom: 1px solid #000;
     padding-bottom: 2px;
-}
-
-.header__address {
-    margin-top: auto;
+    max-width: 240px;
 }
 
 .cover {
@@ -102,16 +106,14 @@ address a {
     background-image: url(/images/cover.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: relative;
+    background-position: center;
     position: relative;
-    z-index: -2;
+    z-index: 0;
 }
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
-    background-position: center;
-    background-size: cover;
     z-index: 0;
     width: 100%;
     height: 100%;
@@ -122,27 +124,30 @@ address a {
     display: flex;
     flex-direction: column; 
     position: relative;
+    gap: 20px;
     z-index: 1;
 }
 
 .aligned-text {
     display: flex;
     justify-content: start;
+    align-self: start;
     padding-top: 165px;
-    padding-left: 50px;
+    padding-left: 20px;
 }
 
 .letter-spacing-extended {
     letter-spacing: 60px;
 }
   
-  .aligned-text_center {
+.aligned-text_center {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+   align-items: center;
+    
 }
   
-  .aligned-text_right {
+.aligned-text_right {
     display: flex;
     justify-content: end;
     padding-top: 20px;
@@ -155,19 +160,20 @@ address a {
     align-items: center;
     padding-right: 82px;
     padding-bottom: 62px;
+    margin-top: 135px;
 }
 
 .cover__description-text {
     color: #FFF;
-    text-align: center;
+    text-align: left;
     font-family: Raleway;
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 127.273% */
     text-transform: uppercase;
-    padding-right: 110px;
-    word-spacing: 16px;
+    padding-right: 78px;
+    word-spacing: 18px;
     position: relative;
     z-index: 1;  
 }
@@ -186,6 +192,7 @@ address a {
     position: relative;
     z-index: 1;
     text-decoration: none;
+    background: none;
 }
 
 .lots_heading {
@@ -213,7 +220,7 @@ address a {
 
 .lots__card-list-item {
     width: 430px;
-    height: 450px;
+    /*height: 450px;*/
     flex-shrink: 0;
 }
 
@@ -226,41 +233,40 @@ address a {
 }
 
 .card {
-    width: 430px;
-    height: 100%;
+    max-width: 100%;
+    max-height: 450px;
+    height: max-content;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.card_type_film {
-    background-image: url(/images/card-lot-01.jpg);
+.lots__card-list-item {
     background-size: cover;
     position: relative;
-    z-index: -2;
+    z-index: 0;
+}
+
+.card_type_film {
+    background-image: url(/images/card-lot-01.jpg);  
 }
 
 .card_type_book {
     background-image: url(/images/card-lot-02.jpg);
-    background-size: cover;
-    position: relative;
-    z-index: -2;
 }
 
 .card_type_picture {
     background-image: url(/images/card-lot-03.jpg);
-    background-size: cover;
-    position: relative;
-    z-index: -2;
 }
 
 .lots__look-more-link {
     text-decoration: none;
     border-bottom: 1px solid #000;
     padding-bottom: 2px;
-    margin-left: 90px;
     padding-top: 30px;
+    margin-left: 90px;
+
 }
 
 .card__title {
@@ -323,7 +329,8 @@ address a {
 .about__column {
    justify-self: start;
    align-self: center; 
-   padding-left: 0%;
+   padding-left: 11px;
+   padding-bottom: 30px;
 }
 
 .about__title {
@@ -335,6 +342,7 @@ address a {
     line-height: normal;
     text-transform: uppercase;
     justify-content: left;
+    
 }
 
 .about__text {
@@ -349,11 +357,15 @@ address a {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 0;
 }
 
-.second__paragraph {
+/*.second__paragraph {
     margin-top: 25px;
-}
+}*/
 
 .footer {
     display: grid;
@@ -364,7 +376,7 @@ address a {
 
 footer address {
     width: 240px;
-    height: 24px;
+    /*height: 24px;*/
     flex-shrink: 0;
     color: #000;
     font-family: Raleway;
@@ -379,10 +391,6 @@ footer address a {
     text-decoration: none;
     border-bottom: 1px solid #000;
     padding-bottom: 2px;
-}
-    
-.footer__address {
-    margin-top: auto;
 }
 
 .footer__menu {
@@ -426,7 +434,7 @@ footer address a {
     justify-content:space-between;
     align-items: start;
     width: 240px;
-    height: 48px;
+    /*height: 48px;*/
     flex-shrink: 0;
     list-style: none;
 }
