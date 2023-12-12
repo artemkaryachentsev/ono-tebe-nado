@@ -223,7 +223,6 @@ address a {
 .lots__card-list-item {
     width: 430px;
     min-height: 450px;
-    height: 100%;
     flex-shrink: 0;
     background-size: cover;
     position: relative;
@@ -257,10 +256,13 @@ address a {
 .card_type_picture {
     background-image: url(/images/card-lot-03.jpg);
 }
-
+/*Когда вставил флекс, как вы предложили, то линия нижняя растянулась на всю ширину, видимо реакция на такой контейнер. Я в интеренете нашел другой способ регуляции подчеркивания и добавил их*/
 .lots__look-more-link {
-    text-decoration: none;
-    border-bottom: 1px solid #000;
+    display: flex;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+    /*border-bottom: 1px solid #000;*/
     color: #000;
     font-family: Raleway;
     font-size: 20px;
@@ -271,7 +273,6 @@ address a {
     /* По какой-то причине этот блок перестал реагировать на margin и padding, я пересмотрел код, там нет явных блокеров*/
     margin-top: 30px;
     margin-left: 90px;
-
 }
 
 .card__title {
@@ -305,7 +306,7 @@ address a {
 }
 
 .about {
-    margin: 100px 50px auto 50px;
+    margin: 190px 50px auto 50px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 1fr;
